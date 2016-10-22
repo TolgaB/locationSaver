@@ -9,13 +9,23 @@
 #import "consumer.h"
 
 @interface consumer ()
-
+@property NSArray *names;
+@property NSArray *costs;
+@property NSArray *Size;
+@property NSArray *discounts;
+@property NSArray *expire;
 @end
 
 @implementation consumer
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.names = [[NSArray alloc] initWithObjects:@"Simply Beverages Calcium & Vitamin D Pulp Free Orange Juice", @"Tabasco ® Brand Original Flavor Hot Sauce", @"Hershey Chocolate Syrup", @"La Croix Lime Sparkling Water",@"King's Hawaiian Sweet Rolls", nil];
+    self.costs = [[NSArray alloc] initWithObjects:@"$5.99",@"$1.89", @"$4.59", @"$3.99", @"$4.49", nil];
+    self.discounts = [[NSArray alloc] initWithObjects:@"1.5 times points", @"2 times points", @"1.2 times points", @"1.4 times points", @"3 times points", nil];
+    self.expire = [[NSArray alloc] initWithObjects:@"89 fl oz", @"2 fl oz", @"48 fl oz", @"8 x 12 fl oz", @"2 x 16 oz", nil];
+    
     
 }
 
@@ -44,7 +54,10 @@
     
     NSString *myString = [[NSString alloc] initWithData:_connectionData encoding:NSUTF8StringEncoding];
     NSLog(@"%@",myString);
-    
+    NSData *data = [myString dataUsingEncoding:NSUTF8StringEncoding];
+    id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+
+
     return myString;
 }
 
