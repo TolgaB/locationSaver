@@ -22,14 +22,15 @@
     
     __weak IBOutlet UIButton *consumerButton;
     __weak IBOutlet UIButton *merchantButton;
-    
-    
+
     
     
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIImage *image = [self getImageFromUrl:@"http://www.scandit.com/wp-content/themes/bridge-child/wbq_barcode_gen.php?symbology=qr&value=H3JKQG7LBL98&size=100&ec=L"];
     [SIOSocket socketWithHost: @"http://10.101.0.230:4200" response: ^(SIOSocket *socket)
      {
          self.socket = socket;
@@ -65,5 +66,13 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(UIImage *)getImageFromUrl:(NSString *)urlGiven {
+    NSURL *url = [NSURL URLWithString:urlGiven];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLResponse* response;
+    NSError* error = nil;
+    NSData* result = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    UIImage *photo = [UIImage imageWithData:result];
+    return photo;
+}
 @end
