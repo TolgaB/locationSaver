@@ -244,7 +244,7 @@
 				TargetAttributes = {
 					FD1236A81DBBD6DC005648F2 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 2SGHEF48JW;
+						DevelopmentTeam = W82EHQ5KSA;
 					};
 					FD1236C11DBBD6DC005648F2 = {
 						CreatedOnToolsVersion = 7.2;
@@ -504,10 +504,13 @@
 			baseConfigurationReference = 17E76363663A820AC1DEEBEC /* Pods-locationSaver.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = locationSaver/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = TB.locationSaver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -516,10 +519,13 @@
 			baseConfigurationReference = A915EF14808D9D598CADB6E1 /* Pods-locationSaver.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = locationSaver/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = TB.locationSaver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
