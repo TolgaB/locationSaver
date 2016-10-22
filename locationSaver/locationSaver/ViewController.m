@@ -22,9 +22,6 @@
     
     __weak IBOutlet UIButton *consumerButton;
     __weak IBOutlet UIButton *merchantButton;
-
-    
-    
 }
 
 - (void)viewDidLoad {

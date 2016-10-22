@@ -7,6 +7,7 @@
 //
 
 #import "consumer.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface consumer ()
 @property NSArray *names;
@@ -19,19 +20,23 @@
 @implementation consumer {
     
     __weak IBOutlet UILabel *pointTillLabel;
+    __weak IBOutlet UIImageView *imageView;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    imageView.layer.cornerRadius = 10;
+    imageView.layer.borderWidth = 1;
+    imageView.layer.borderColor = [UIColor darkGrayColor].CGColor;
     self.names = [[NSArray alloc] initWithObjects:@"Simply Beverages Calcium & Vitamin D Pulp Free Orange Juice", @"Tabasco ® Brand Original Flavor Hot Sauce", @"Hershey Chocolate Syrup", @"La Croix Lime Sparkling Water",@"King's Hawaiian Sweet Rolls", nil];
     self.costs = [[NSArray alloc] initWithObjects:@"$5.99",@"$1.89", @"$4.59", @"$3.99", @"$4.49", nil];
     self.discounts = [[NSArray alloc] initWithObjects:@"1.5 times points", @"2 times points", @"1.2 times points", @"1.4 times points", @"3 times points", nil];
     self.expire = [[NSArray alloc] initWithObjects:@"89 fl oz", @"2 fl oz", @"48 fl oz", @"8 x 12 fl oz", @"2 x 16 oz", nil];
     
-    
     [self getProbability];
 }
+
 
 - (NSString *) getProbability {
     NSString *path2 = @"https://syf2020.syfwebservices.com/syf/nextMostLikelyPurchase";
