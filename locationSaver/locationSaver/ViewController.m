@@ -7,15 +7,46 @@
 //
 
 #import "ViewController.h"
+#import <SIOSocket/SIOSocket.h>
+
 
 @interface ViewController ()
 
+@property SIOSocket *socket;
+
+@property BOOL socketIsConnected;
+
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    
+    
+    
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [SIOSocket socketWithHost: @"http://10.101.0.230:4200" response: ^(SIOSocket *socket)
+     {
+         self.socket = socket;
+         
+         __weak typeof(self) weakSelf = self;
+         self.socket.onConnect = ^()
+         {
+             weakSelf.socketIsConnected = YES;
+             
+             
+         };
+         
+         [self.socket on:@"join" callback: ^(SIOParameterArray *args)
+          {
+              NSLog(@"Connected to server");
+          }];
+         
+         
+     }];
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
