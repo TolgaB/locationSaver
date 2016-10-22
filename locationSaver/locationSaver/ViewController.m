@@ -20,6 +20,9 @@
 
 @implementation ViewController {
     
+    __weak IBOutlet UIButton *consumerButton;
+    __weak IBOutlet UIButton *merchantButton;
+    
     
     
     
@@ -48,6 +51,14 @@
      }];
     
     // Do any additional setup after loading the view, typically from a nib.
+}
+- (IBAction)merchantButtonPressed:(id)sender {
+    NSLog(@"merchant button pressed");
+}
+
+- (IBAction)consumerButtonPressed:(id)sender {
+    [self performSegueWithIdentifier:@"goToConsumer" sender:@"self"];
+    NSLog(@"consumer button pressed");
 }
 
 - (void)didReceiveMemoryWarning {

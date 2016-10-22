@@ -16,7 +16,7 @@
 		FD1236BC1DBBD6DC005648F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1236BA1DBBD6DC005648F2 /* LaunchScreen.storyboard */; };
 		FD1236C71DBBD6DC005648F2 /* locationSaverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1236C61DBBD6DC005648F2 /* locationSaverTests.m */; };
 		FD1236D21DBBD6DC005648F2 /* locationSaverUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1236D11DBBD6DC005648F2 /* locationSaverUITests.m */; };
-		FD6929381DBC01C50017DF3E /* UIViewController+testingView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6929371DBC01C50017DF3E /* UIViewController+testingView.m */; };
+		FD69293E1DBC19500017DF3E /* consumer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD69293D1DBC19500017DF3E /* consumer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,8 +56,8 @@
 		FD1236CD1DBBD6DC005648F2 /* locationSaverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = locationSaverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD1236D11DBBD6DC005648F2 /* locationSaverUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = locationSaverUITests.m; sourceTree = "<group>"; };
 		FD1236D31DBBD6DC005648F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FD6929361DBC01C50017DF3E /* UIViewController+testingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+testingView.h"; sourceTree = "<group>"; };
-		FD6929371DBC01C50017DF3E /* UIViewController+testingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+testingView.m"; sourceTree = "<group>"; };
+		FD69293C1DBC19500017DF3E /* consumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = consumer.h; sourceTree = "<group>"; };
+		FD69293D1DBC19500017DF3E /* consumer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = consumer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,12 +128,12 @@
 		FD1236AB1DBBD6DC005648F2 /* locationSaver */ = {
 			isa = PBXGroup;
 			children = (
+				FD69293C1DBC19500017DF3E /* consumer.h */,
+				FD69293D1DBC19500017DF3E /* consumer.m */,
 				FD1236AF1DBBD6DC005648F2 /* AppDelegate.h */,
 				FD1236B01DBBD6DC005648F2 /* AppDelegate.m */,
 				FD1236B21DBBD6DC005648F2 /* ViewController.h */,
 				FD1236B31DBBD6DC005648F2 /* ViewController.m */,
-				FD6929361DBC01C50017DF3E /* UIViewController+testingView.h */,
-				FD6929371DBC01C50017DF3E /* UIViewController+testingView.m */,
 				FD1236B51DBBD6DC005648F2 /* Main.storyboard */,
 				FD1236B81DBBD6DC005648F2 /* Assets.xcassets */,
 				FD1236BA1DBBD6DC005648F2 /* LaunchScreen.storyboard */,
@@ -354,8 +354,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD1236B41DBBD6DC005648F2 /* ViewController.m in Sources */,
+				FD69293E1DBC19500017DF3E /* consumer.m in Sources */,
 				FD1236B11DBBD6DC005648F2 /* AppDelegate.m in Sources */,
-				FD6929381DBC01C50017DF3E /* UIViewController+testingView.m in Sources */,
 				FD1236AE1DBBD6DC005648F2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
