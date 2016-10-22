@@ -73,8 +73,88 @@
                     <view key="view" contentMode="scaleToFill" id="ki6-kZ-uXw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXh-XQ-Nyp">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="ZO5-Hc-lqy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ZO5-Hc-lqy"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="ZO5-Hc-lqy"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="same" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gsv-b6-UAe">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="KVl-86-AVE"/>
+                                    <constraint firstAttribute="height" constant="20" id="cVG-78-h92"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="KVl-86-AVE"/>
+                                        <exclude reference="cVG-78-h92"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="KVl-86-AVE"/>
+                                        <include reference="cVG-78-h92"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="lXh-XQ-Nyp" firstAttribute="leading" secondItem="ki6-kZ-uXw" secondAttribute="leading" id="84x-yi-cya"/>
+                            <constraint firstAttribute="trailing" secondItem="lXh-XQ-Nyp" secondAttribute="trailing" id="99A-kt-1E2"/>
+                            <constraint firstItem="Gsv-b6-UAe" firstAttribute="centerX" secondItem="ki6-kZ-uXw" secondAttribute="centerX" id="BS4-7o-Lz9"/>
+                            <constraint firstItem="Gsv-b6-UAe" firstAttribute="top" secondItem="bAA-HQ-0yX" secondAttribute="bottom" id="Kzm-uS-KVP"/>
+                            <constraint firstItem="lXh-XQ-Nyp" firstAttribute="top" secondItem="ki6-kZ-uXw" secondAttribute="top" constant="58" id="m7L-9b-QHT"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="lXh-XQ-Nyp"/>
+                                <exclude reference="Gsv-b6-UAe"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="84x-yi-cya"/>
+                                <exclude reference="99A-kt-1E2"/>
+                                <exclude reference="m7L-9b-QHT"/>
+                                <exclude reference="BS4-7o-Lz9"/>
+                                <exclude reference="Kzm-uS-KVP"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="lXh-XQ-Nyp"/>
+                                <include reference="Gsv-b6-UAe"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="84x-yi-cya"/>
+                                <include reference="99A-kt-1E2"/>
+                                <include reference="m7L-9b-QHT"/>
+                                <include reference="BS4-7o-Lz9"/>
+                                <include reference="Kzm-uS-KVP"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="pointTillLabel" destination="Gsv-b6-UAe" id="1OT-lg-imk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hAg-S3-iRi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

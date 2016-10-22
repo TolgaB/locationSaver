@@ -16,7 +16,10 @@
 @property NSArray *expire;
 @end
 
-@implementation consumer
+@implementation consumer {
+    
+    __weak IBOutlet UILabel *pointTillLabel;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,6 +30,7 @@
     self.expire = [[NSArray alloc] initWithObjects:@"89 fl oz", @"2 fl oz", @"48 fl oz", @"8 x 12 fl oz", @"2 x 16 oz", nil];
     
     
+    [self getProbability];
 }
 
 - (NSString *) getProbability {
@@ -51,13 +55,18 @@
     NSError *error = nil;
     
     NSData *_connectionData = [self sendSynchronousRequest:_request returningResponse:&response error:&error];
-    
+    NSDictionary *retrievedData = [NSJSONSerialization JSONObjectWithData:_connectionData
+                                                                  options:0
+                                                                    error:NULL];
     NSString *myString = [[NSString alloc] initWithData:_connectionData encoding:NSUTF8StringEncoding];
     NSLog(@"%@",myString);
+    
     NSData *data = [myString dataUsingEncoding:NSUTF8StringEncoding];
     id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 
 
+    NSLog(@"%@",[self getRewards]);
+    
     return myString;
 }
 
@@ -81,7 +90,10 @@
     NSError *error2 = nil;
     
     NSData *connectionData = [self sendSynchronousRequest:request returningResponse:&response2 error:&error2];
-    
+    NSDictionary *retrievedData = [NSJSONSerialization JSONObjectWithData:connectionData
+                                                                  options:0
+                                                                    error:NULL];
+    pointTillLabel.text = [NSString stringWithFormat: @"%@ Point To Reward",[retrievedData objectForKeyedSubscript:@"points_to_next_certificate"]];
     NSString *printthing = [[NSString alloc] initWithData:connectionData encoding:NSUTF8StringEncoding];
     NSLog(@"printthing2 %@",printthing);
     
