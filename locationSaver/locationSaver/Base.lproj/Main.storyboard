@@ -389,6 +389,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="creditAmount" destination="YYL-MC-Qje" id="iLZ-CH-7JY"/>
                         <outlet property="creditLabel" destination="YYL-MC-Qje" id="kcN-mC-uOt"/>
                     </connections>
                 </viewController>

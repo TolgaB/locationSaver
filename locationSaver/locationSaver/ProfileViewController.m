@@ -18,11 +18,23 @@
 
 @implementation ProfileViewController {
     UIButton *applyButton;
+    UILabel *firstNameLabel;
+    UILabel *secondNameLabel;
+    UILabel *creditAmountLabel;
+    UITextField *firstNameField;
+    UITextField *lastNameField;
+    UITextField *creditField;
+    UIButton *submitBUtton;
+    UIView *contentView;
+    UILabel *requestingLabel;
+    int requestedAmount;
+    __weak IBOutlet UILabel *creditAmount;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    requestedAmount = 0;
     applyButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [applyButton addTarget:self
                action:@selector(applyButtonPressed)
@@ -107,11 +119,42 @@
 
     NSData *connectionData = [self sendSynchronousRequest:request returningResponse:&response error:&error];
 
-    NSString *myString = [[NSString alloc] initWithData:connectionData encoding:NSUTF8StringEncoding];
-
-    NSLog(@"%@",myString);
-
-    return true;
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:connectionData options:kNilOptions error:&error];
+    
+    NSDictionary *items = [json valueForKeyPath:@"applyResponse"];
+    NSDictionary *same = [items valueForKeyPath:@"applyResponse"];
+    NSString *same2 = [same valueForKey:@"responseText"];
+    if([same2 isEqualToString: @"0010 APPROVED"]){
+        UILabel *approveLabel = [[UILabel alloc] initWithFrame:CGRectMake((contentView.bounds.size.width/2)-50, 80, 250, 100)];
+        [approveLabel setFont:[UIFont fontWithName:@"San Francisco" size:100]];
+        [approveLabel setText:@"APPROVED"];
+        [contentView addSubview:approveLabel];
+        [requestingLabel removeFromSuperview];
+        int added = 80 + requestedAmount;
+        creditAmount.text = [NSString stringWithFormat:@"$%i", added];
+        
+        return true;
+    }
+    else{
+        return false;
+    }
+    
+////    NSInteger *credit = 0;
+//    
+////    for(int i = 0; i< items.count; i++){
+////                NSDictionary *sketch = [items objectAtIndex:i];
+////                NSLog(@"credits is %d", (int)credit);
+////                NSLog(@"certificate dollar is %d", (NSInteger)[[sketch objectForKey:@"certificate_dollar_amount"] integerValue]);
+////                credit += (NSInteger)[[sketch objectForKey:@"certificate_dollar_amount"] integerValue];
+////                NSLog(@"final credit is %d", credit);
+////    }
+//
+//    
+//    NSString *myString = [[NSString alloc] initWithData:connectionData encoding:NSUTF8StringEncoding];
+//
+//    NSLog(@"%@",myString);
+//
+//    return true;
 }
 
 
@@ -141,26 +184,73 @@
 
 -(void)applyButtonPressed {
     NSLog(@"applied button pressed");
-    UIView* contentView = [[UIView alloc] init];
+   contentView = [[UIView alloc] init];
     contentView.layer.cornerRadius = 5;
     contentView.backgroundColor = [UIColor whiteColor];
     contentView.frame = CGRectMake(0.0, 0.0, 300.0, 350.0);
     
-    UILabel *firstNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(contentView.frame.size.width - 250, 30, 200, 30.0)];
+    firstNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(contentView.frame.size.width - 250, 30, 200, 30.0)];
     firstNameLabel.text = @"First Name:";
     
-    UILabel *secondNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(contentView.frame.size.width-250, 80, 200, 30)];
+    secondNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(contentView.frame.size.width-250, 110, 200, 30)];
     secondNameLabel.text = @"Last Name:";
     
+    creditAmountLabel = [[UILabel alloc] initWithFrame:CGRectMake(contentView.frame.size.width-250, 190, 200, 30)];
+    creditAmountLabel.text = @"Credit Amount:";
+    
+    firstNameField = [[UITextField alloc] initWithFrame:CGRectMake(contentView.frame.size.width-150, 30, 100, 30)];
+    [firstNameField setBackgroundColor:[UIColor grayColor]];
+    
+    lastNameField = [[UITextField alloc] initWithFrame:CGRectMake(contentView.frame.size.width-150, 110, 100, 30)];
+    [lastNameField setBackgroundColor:[UIColor grayColor]];
+    
+    creditField = [[UITextField alloc] initWithFrame:CGRectMake(contentView.frame.size.width-125, 190, 75, 30)];
+    [creditField setKeyboardType:UIKeyboardTypePhonePad];
+    [creditField setBackgroundColor:[UIColor grayColor]];
+    
+    submitBUtton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [submitBUtton addTarget:self
+                    action:@selector(requestButtonPressed)
+          forControlEvents:UIControlEventTouchUpInside];
+    submitBUtton.frame = CGRectMake(self.view.bounds.size.width/4-30, 260.0, 160.0, 40.0);
+    [submitBUtton setTitle:@"Submit Request" forState:UIControlStateNormal];
+    [submitBUtton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    
+
+    [contentView addSubview:submitBUtton];
+    [contentView addSubview:creditAmountLabel];
+    [contentView addSubview:creditField];
+    [contentView addSubview:lastNameField];
+    [contentView addSubview:firstNameField];
     [contentView addSubview:firstNameLabel];
-     [contentView addSubview:secondNameLabel];
+    [contentView addSubview:secondNameLabel];
     
     KLCPopup* popup = [KLCPopup popupWithContentView:contentView];
     [popup show];
 
-    [self getCredit];
+    //[self getCredit];
 }
 
+-(void)requestButtonPressed {
+   
+        contentView.frame = CGRectMake(0.0, 0.0, 300.0, 250.0);
+        requestingLabel = [[UILabel alloc] initWithFrame:CGRectMake((contentView.bounds.size.width/2)-50, 80, 250, 100)];
+        [requestingLabel setText:@"Requesting"];
+        [requestingLabel setTextColor:[UIColor blackColor]];
+        [submitBUtton removeFromSuperview];
+        [firstNameLabel removeFromSuperview];
+        [secondNameLabel removeFromSuperview];
+        [creditAmountLabel removeFromSuperview];
+        [firstNameField removeFromSuperview];
+        [lastNameField removeFromSuperview];
+        requestedAmount = [creditField.text intValue];
+        [creditField removeFromSuperview];
+        [contentView addSubview:requestingLabel];
+         [self getCredit];
+    
+    
+   
+}
 /*
 #pragma mark - Navigation
 

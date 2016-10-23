@@ -30,6 +30,7 @@
     __weak IBOutlet UILabel *productPrice;
     __weak IBOutlet UILabel *productPoints;
     __weak IBOutlet UIImageView *barcodeImage;
+
 }
 
 -(void)viewDidLoad {
