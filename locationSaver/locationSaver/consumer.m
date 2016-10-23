@@ -12,19 +12,26 @@
 @interface consumer ()
 @property NSArray *names;
 @property NSArray *costs;
-@property NSArray *Size;
+@property NSArray *size;
 @property NSArray *discounts;
-@property NSArray *expire;
+@property NSArray *images;
 @end
 
 @implementation consumer {
     
+    __weak IBOutlet UIImageView *productImageView;
+    __weak IBOutlet UILabel *productPrice;
+    __weak IBOutlet UILabel *productPoints;
+    __weak IBOutlet UILabel *productName;
     __weak IBOutlet UILabel *pointTillLabel;
     __weak IBOutlet UIImageView *imageView;
+    int currentProduct;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    currentProduct = 0;
     
     imageView.layer.cornerRadius = 10;
     imageView.layer.borderWidth = 1;
@@ -32,8 +39,8 @@
     self.names = [[NSArray alloc] initWithObjects:@"Simply Beverages Calcium & Vitamin D Pulp Free Orange Juice", @"Tabasco ® Brand Original Flavor Hot Sauce", @"Hershey Chocolate Syrup", @"La Croix Lime Sparkling Water",@"King's Hawaiian Sweet Rolls", nil];
     self.costs = [[NSArray alloc] initWithObjects:@"$5.99",@"$1.89", @"$4.59", @"$3.99", @"$4.49", nil];
     self.discounts = [[NSArray alloc] initWithObjects:@"1.5 times points", @"2 times points", @"1.2 times points", @"1.4 times points", @"3 times points", nil];
-    self.expire = [[NSArray alloc] initWithObjects:@"89 fl oz", @"2 fl oz", @"48 fl oz", @"8 x 12 fl oz", @"2 x 16 oz", nil];
-    
+    self.size = [[NSArray alloc] initWithObjects:@"89 fl oz", @"2 fl oz", @"48 fl oz", @"8 x 12 fl oz", @"2 x 16 oz", nil];
+    self.images = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"orange.png"],[UIImage imageNamed:@"tabasco.png"],[UIImage imageNamed:@"hershey.png"],[UIImage imageNamed:@"lacroix.jpg"],[UIImage imageNamed:@"king.png"], nil];
     [self getProbability];
 }
 
@@ -128,6 +135,24 @@
     *response = resp;
     *error = err;
     return data;
+}
+- (IBAction)noButtonPressed:(id)sender {
+    if (currentProduct > 0) {
+    currentProduct = currentProduct -1;
+    }
+    productName.text = self.names[currentProduct];
+    productPoints.text = self.size[currentProduct];
+    productPrice.text = self.costs[currentProduct];
+    productImageView.image = self.images[currentProduct];
+}
+- (IBAction)yesButtonPressed:(id)sender {
+    if (currentProduct != 4) {
+        currentProduct = currentProduct + 1;
+    }
+    productName.text = self.names[currentProduct];
+    productPoints.text = self.size[currentProduct];
+    productPrice.text = self.costs[currentProduct];
+    productImageView.image = self.images[currentProduct];
 }
 
 - (void)didReceiveMemoryWarning {
