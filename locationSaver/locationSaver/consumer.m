@@ -179,7 +179,7 @@
     currentProduct = currentProduct -1;
     }
     productName.text = self.names[currentProduct];
-    productPoints.text = self.points[currentProduct];
+    productPoints.text = self.discounts[currentProduct];
     productPrice.text = self.costs[currentProduct];
     productImageView.image = self.images[currentProduct];
 }
@@ -189,7 +189,7 @@
         currentProduct = currentProduct + 1;
     }
     productName.text = self.names[currentProduct];
-    productPoints.text = self.points[currentProduct];
+    productPoints.text = self.discounts[currentProduct];
     productPrice.text = self.costs[currentProduct];
     productImageView.image = self.images[currentProduct];
 }
