@@ -31,6 +31,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    UISwipeGestureRecognizer *rightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipeHandle:)];
+    rightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    [rightRecognizer setNumberOfTouchesRequired:1];
+    
+    //add the your gestureRecognizer , where to detect the touch..
+    [self.view addGestureRecognizer:rightRecognizer];
+    
+    UISwipeGestureRecognizer *leftRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipeHandle:)];
+    leftRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    [leftRecognizer setNumberOfTouchesRequired:1];
+    
+    [self.view addGestureRecognizer:leftRecognizer];
+    
+    
     currentProduct = 0;
     
     imageView.layer.cornerRadius = 10;
@@ -40,7 +55,7 @@
     self.costs = [[NSArray alloc] initWithObjects:@"$5.99",@"$1.89", @"$4.59", @"$3.99", @"$4.49", nil];
     self.discounts = [[NSArray alloc] initWithObjects:@"1.5 times points", @"2 times points", @"1.2 times points", @"1.4 times points", @"3 times points", nil];
     self.size = [[NSArray alloc] initWithObjects:@"89 fl oz", @"2 fl oz", @"48 fl oz", @"8 x 12 fl oz", @"2 x 16 oz", nil];
-    self.images = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"orange.png"],[UIImage imageNamed:@"tabasco.png"],[UIImage imageNamed:@"hershey.png"],[UIImage imageNamed:@"lacroix.jpg"],[UIImage imageNamed:@"king.png"], nil];
+    self.images = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"orange.png"],[UIImage imageNamed:@"tabasco.png"],[UIImage imageNamed:@"hershey.png"],[UIImage imageNamed:@"lacroix.jpg"],[UIImage imageNamed:@"king.jpg"], nil];
     [self getProbability];
 }
 
@@ -136,7 +151,8 @@
     *error = err;
     return data;
 }
-- (IBAction)noButtonPressed:(id)sender {
+- (void)rightSwipeHandle:(UISwipeGestureRecognizer*)gestureRecognizer
+    {
     if (currentProduct > 0) {
     currentProduct = currentProduct -1;
     }
@@ -145,7 +161,8 @@
     productPrice.text = self.costs[currentProduct];
     productImageView.image = self.images[currentProduct];
 }
-- (IBAction)yesButtonPressed:(id)sender {
+- (void)leftSwipeHandle:(UISwipeGestureRecognizer*)gestureRecognizer
+{
     if (currentProduct != 4) {
         currentProduct = currentProduct + 1;
     }

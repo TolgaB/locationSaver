@@ -95,28 +95,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nVz-J3-9lQ">
                                 <rect key="frame" x="25" y="430" width="550" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="siy-5L-hf4">
-                                        <rect key="frame" x="50" y="25" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="8iJ-Wj-CxY"/>
-                                            <constraint firstAttribute="height" constant="50" id="OQa-i8-PcE"/>
-                                        </constraints>
-                                        <state key="normal" image="no"/>
-                                        <connections>
-                                            <action selector="noButtonPressed:" destination="1wg-ak-pPZ" eventType="touchDown" id="Wx7-o8-rEd"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5m-UL-2ty">
-                                        <rect key="frame" x="450" y="25" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="OdN-5Y-k9e"/>
-                                            <constraint firstAttribute="width" constant="50" id="oqP-kd-wQ0"/>
-                                        </constraints>
-                                        <state key="normal" image="yes"/>
-                                        <connections>
-                                            <action selector="yesButtonPressed:" destination="1wg-ak-pPZ" eventType="touchDown" id="aB2-XW-R9A"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXg-XH-w4t">
                                         <rect key="frame" x="125" y="63" width="300" height="24"/>
                                         <constraints>
@@ -129,13 +107,9 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="g5m-UL-2ty" secondAttribute="trailing" constant="50" id="1F6-ic-VUd"/>
                                     <constraint firstItem="FXg-XH-w4t" firstAttribute="top" secondItem="nVz-J3-9lQ" secondAttribute="top" constant="63" id="5Rb-aN-6ii"/>
                                     <constraint firstItem="FXg-XH-w4t" firstAttribute="centerX" secondItem="nVz-J3-9lQ" secondAttribute="centerX" id="5U5-gd-a53"/>
                                     <constraint firstAttribute="height" constant="100" id="LEL-Jr-AKZ"/>
-                                    <constraint firstItem="siy-5L-hf4" firstAttribute="centerY" secondItem="nVz-J3-9lQ" secondAttribute="centerY" id="TJc-6t-hCA"/>
-                                    <constraint firstItem="g5m-UL-2ty" firstAttribute="centerY" secondItem="nVz-J3-9lQ" secondAttribute="centerY" id="ZuN-gm-uk0"/>
-                                    <constraint firstItem="siy-5L-hf4" firstAttribute="leading" secondItem="nVz-J3-9lQ" secondAttribute="leading" constant="50" id="qaZ-7f-qH8"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="es6-kj-NDA">
@@ -200,8 +174,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="no" width="479" height="479"/>
         <image name="oj" width="245" height="245"/>
-        <image name="yes" width="300" height="300"/>
     </resources>
 </document>
