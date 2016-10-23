@@ -14,8 +14,17 @@ app.get('/login', function(req,res){
 });
 
 app.get('signup', function(req,res){
-	res.resnder('register.ejs')
+	res.render('register.ejs')
 });
+
+app.post('/register', function(req,res){
+	console.log(request.body.email);
+	console.log(request.body.company);
+	console.log(request.body.address);
+	console.log(request.body.password);
+})
+
+
 
 io.on('connection', function (socket) {
 	io.sockets.emit('join', socket['id']);
