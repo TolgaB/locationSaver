@@ -43,12 +43,12 @@
     self.progressBarView = [[TYMProgressBarView alloc] initWithFrame:CGRectMake(35, 570, 300, 20)];
     self.progressBarView.barBorderWidth = 1.0;
     self.progressBarView.barBorderColor = [UIColor redColor];
-    
+    self.progressBarView.progress = .2;
     [self.view addSubview:self.progressBarView];
     
     
 //    CAGradientLayer *gradient = [[CAGradientLayer alloc] init];
-//    gradient.frame = productView.bounds;
+//    gradient.frame = prosductView.bounds;
 //    gradient.startPoint = CGPointMake(0.0, 0.0);
 //    gradient.endPoint = CGPointMake(0.0, 0.0);
     
@@ -193,7 +193,8 @@
     productPoints.text = self.discounts[currentProduct];
     productPrice.text = self.costs[currentProduct];
     productImageView.image = self.images[currentProduct];
-    self.progressBarView.progress = [self.progress[currentProduct] floatValue];
+    NSNumber *progressNum = @([self.discounts[currentProduct] intValue]);
+    self.progressBarView.progress = [progressNum floatValue]/100;
 }
 - (void)leftSwipeHandle:(UISwipeGestureRecognizer*)gestureRecognizer
 {
@@ -205,7 +206,11 @@
     productPrice.text = self.costs[currentProduct];
     productImageView.image = self.images[currentProduct];
 //    NSLog(@"%f", self.progress[currentProduct]);
-    self.progressBarView.progress = [self.progress[currentProduct] floatValue];
+    NSNumber *progressNum = @([self.discounts[currentProduct] intValue]);
+    self.progressBarView.progress = [progressNum floatValue]/100;
+    NSLog(@"manual");
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
