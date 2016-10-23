@@ -67,6 +67,14 @@
     self.discounts = [[NSArray alloc] initWithObjects:@"1.5 times points", @"2 times points", @"1.2 times points", @"1.4 times points", @"3 times points", nil];
     self.size = [[NSArray alloc] initWithObjects:@"89 fl oz", @"2 fl oz", @"48 fl oz", @"8 x 12 fl oz", @"2 x 16 oz", nil];
     self.images = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"orangejuice"],[UIImage imageNamed:@"tabasco"],[UIImage imageNamed:@"hershey"],[UIImage imageNamed:@"lacroix"],[UIImage imageNamed:@"king"], nil];
+    
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
+    singleTap.numberOfTapsRequired = 1;
+     productImageView.userInteractionEnabled = YES;
+    [productImageView addGestureRecognizer:singleTap];
+
+    
     [self getProbability];
 }
 
@@ -188,4 +196,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)tapDetected{
+    NSLog(@"Open more info on the product");
+    
+}
 @end
