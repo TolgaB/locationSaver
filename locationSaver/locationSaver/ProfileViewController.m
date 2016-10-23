@@ -53,19 +53,21 @@
 //                                                                  options:0
 //                                                                    error:NULL];
 
-    NSInteger *credit = 0;
 
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:connectionData options:kNilOptions error:&error];
     
     NSArray *items = [json valueForKeyPath:@"redeemable_certificates"];
-    NSLog(@"%lu", items.count);
+    
+    NSInteger *credit = 0;
+    
     for(int i = 0; i< items.count; i++){
-        NSDictionary *sketch = [items objectAtIndex:i];
-        NSLog(@"%@", [sketch objectForKey:@"certificate_dollar_amount"]);
-        credit = credit + [[sketch objectForKey:@"certificate_dollar_amount"] integerValue];
-        NSLog(@"%d", (int)credit);
+//        NSDictionary *sketch = [items objectAtIndex:i];
+//        NSLog(@"credits is %d", (int)credit);
+//        NSLog(@"certificate dollar is %d", (NSInteger)[[sketch objectForKey:@"certificate_dollar_amount"] integerValue]);
+//        credit += (NSInteger)[[sketch objectForKey:@"certificate_dollar_amount"] integerValue];
+//        NSLog(@"final credit is %d", credit);
     }
-
+    credit = items.count * 10;
     return credit;
 }
 
