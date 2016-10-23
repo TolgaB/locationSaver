@@ -7,6 +7,7 @@
 //
 
 #import "ProfileViewController.h"
+#import <KLCPopup.h>
 
 @interface ProfileViewController (){
     
@@ -15,11 +16,21 @@
 
 @end
 
-@implementation ProfileViewController
+@implementation ProfileViewController {
+    UIButton *applyButton;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    applyButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [applyButton addTarget:self
+               action:@selector(applyButtonPressed)
+     forControlEvents:UIControlEventTouchUpInside];
+    applyButton.frame = CGRectMake(self.view.bounds.size.width/2 - 60, 150.0, 160.0, 40.0);
+    [applyButton setTitle:@"Apply For Credit" forState:UIControlStateNormal];
+    [applyButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.view addSubview:applyButton];
     creditLabel.text = [NSString stringWithFormat:@"$%d",(int)[self getRewards]];
 }
 
@@ -96,6 +107,26 @@
     return data;
 }
 
+-(void)applyButtonPressed {
+    NSLog(@"applied button pressed");
+    UIView* contentView = [[UIView alloc] init];
+    contentView.layer.cornerRadius = 5;
+    contentView.backgroundColor = [UIColor whiteColor];
+    contentView.frame = CGRectMake(0.0, 0.0, 300.0, 350.0);
+    
+    UILabel *firstNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(contentView.frame.size.width - 250, 30, 200, 30.0)];
+    firstNameLabel.text = @"First Name:";
+    
+    UILabel *secondNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(contentView.frame.size.width-250, 80, 200, 30)];
+    secondNameLabel.text = @"Last Name:";
+    
+    [contentView addSubview:firstNameLabel];
+     [contentView addSubview:secondNameLabel];
+    
+    KLCPopup* popup = [KLCPopup popupWithContentView:contentView];
+    [popup show];
+
+}
 
 /*
 #pragma mark - Navigation
