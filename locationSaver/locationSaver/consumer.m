@@ -200,6 +200,10 @@
 
 -(void)tapDetected{
     NSLog(@"Open more info on the product");
+    NSNumber *conversion = [NSNumber numberWithInt:currentProduct];
+    [[NSUserDefaults standardUserDefaults] setObject:conversion forKey:@"productNumber"];
+    [self performSegueWithIdentifier:@"toProduct" sender:@"self"];
+    
     
 }
 @end

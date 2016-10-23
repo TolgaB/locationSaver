@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1wg-ak-pPZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1wg-ak-pPZ">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -198,11 +198,12 @@
                         <outlet property="productName" destination="es6-kj-NDA" id="l58-xi-DLo"/>
                         <outlet property="productPoints" destination="j2O-Yx-NOM" id="DJH-zL-Ovn"/>
                         <outlet property="productPrice" destination="FXg-XH-w4t" id="QVO-BA-0q0"/>
+                        <segue destination="wQh-uj-isE" kind="show" identifier="toProduct" id="PMa-ko-avb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hAg-S3-iRi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1090" y="325"/>
+            <point key="canvasLocation" x="998" y="375"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="5wz-Dd-tvR">
@@ -222,6 +223,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NPM-tO-YPi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="727" y="1498"/>
+        </scene>
+        <!--Product View Controller-->
+        <scene sceneID="FAp-qq-Y8O">
+            <objects>
+                <viewController id="wQh-uj-isE" customClass="productViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SQz-2E-qYP"/>
+                        <viewControllerLayoutGuide type="bottom" id="aJW-es-zLo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xqf-8C-PKM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D7F-UV-k2U">
+                                <rect key="frame" x="39" y="62" width="314" height="292"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwy-XD-0ta">
+                                <rect key="frame" x="418" y="80" width="107" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1z-YG-bIH">
+                                <rect key="frame" x="418" y="163" width="107" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ne-hH-8Mb">
+                                <rect key="frame" x="418" y="245" width="104" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SY1-5q-V4C">
+                                <rect key="frame" x="64" y="423" width="137" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OUs-eC-fcV">
+                                <rect key="frame" x="357" y="392" width="196" height="170"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="barcodeImage" destination="OUs-eC-fcV" id="qXD-UV-ufd"/>
+                        <outlet property="productImage" destination="D7F-UV-k2U" id="sUC-6h-CBJ"/>
+                        <outlet property="productName" destination="pwy-XD-0ta" id="Ykb-bs-sra"/>
+                        <outlet property="productPoints" destination="SY1-5q-V4C" id="EYW-jh-GsO"/>
+                        <outlet property="productPrice" destination="1Ne-hH-8Mb" id="eqa-OU-64A"/>
+                        <outlet property="productSize" destination="d1z-YG-bIH" id="fQA-Nc-jhh"/>
+                        <segue destination="1wg-ak-pPZ" kind="show" identifier="toOfferFromProduct" id="vXY-e5-RZ4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="loq-ra-aul" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1335" y="1158"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="YvX-oa-fCr">

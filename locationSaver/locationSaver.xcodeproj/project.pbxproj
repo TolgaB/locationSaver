@@ -18,6 +18,7 @@
 		FD1236D21DBBD6DC005648F2 /* locationSaverUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1236D11DBBD6DC005648F2 /* locationSaverUITests.m */; };
 		FD69293E1DBC19500017DF3E /* consumer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD69293D1DBC19500017DF3E /* consumer.m */; };
 		FD6929411DBC27780017DF3E /* barcodeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6929401DBC27780017DF3E /* barcodeTest.m */; };
+		FD6929511DBC82000017DF3E /* productViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6929501DBC82000017DF3E /* productViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		FD69293D1DBC19500017DF3E /* consumer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = consumer.m; sourceTree = "<group>"; };
 		FD69293F1DBC27780017DF3E /* barcodeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = barcodeTest.h; sourceTree = "<group>"; };
 		FD6929401DBC27780017DF3E /* barcodeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = barcodeTest.m; sourceTree = "<group>"; };
+		FD69294F1DBC82000017DF3E /* productViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = productViewController.h; sourceTree = "<group>"; };
+		FD6929501DBC82000017DF3E /* productViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = productViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,8 @@
 			children = (
 				FD69293C1DBC19500017DF3E /* consumer.h */,
 				FD69293D1DBC19500017DF3E /* consumer.m */,
+				FD69294F1DBC82000017DF3E /* productViewController.h */,
+				FD6929501DBC82000017DF3E /* productViewController.m */,
 				FD1236AF1DBBD6DC005648F2 /* AppDelegate.h */,
 				FD1236B01DBBD6DC005648F2 /* AppDelegate.m */,
 				FD1236B21DBBD6DC005648F2 /* ViewController.h */,
@@ -360,6 +365,7 @@
 			files = (
 				FD1236B41DBBD6DC005648F2 /* ViewController.m in Sources */,
 				FD69293E1DBC19500017DF3E /* consumer.m in Sources */,
+				FD6929511DBC82000017DF3E /* productViewController.m in Sources */,
 				FD6929411DBC27780017DF3E /* barcodeTest.m in Sources */,
 				FD1236B11DBBD6DC005648F2 /* AppDelegate.m in Sources */,
 				FD1236AE1DBBD6DC005648F2 /* main.m in Sources */,
