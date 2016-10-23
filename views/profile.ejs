@@ -21,6 +21,7 @@
 	<meta name="msapplication-TileImage" content="favicon_imgs/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
 	<script src="https://www.gstatic.com/firebasejs/3.0.4/firebase.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
@@ -30,6 +31,11 @@
 	<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-messaging.js"></script>
 	<script>
+		var nameArray = [];
+		var priceArray = [];
+		var pointArray = [];
+		var dateArray = [];
+
 	  	var config = {
 	    	apiKey: "AIzaSyBek_yuEWiSsaHRJqidi4Jj1ScIAVJbryw",
 	    	authDomain: " money2020-c0325.firebaseapp.com",
@@ -37,17 +43,76 @@
 	  	};
 	  	firebase.initializeApp(config);
 
-	  	var userId = firebase.auth().currentUser.uid;
+	  	// var userId = firebase.auth().currentUser.uid;
 	  	var uid = "moZhTZKHTOMx4BXnDXvIFlcsW0K3";
 		var database = firebase.database();
+
 		function setMoreData(){
-			firebase.database().ref('users/' + uid).set({
-	    		name: document.getElementById("name").value,
-	   			companyName : document.getElementById("company").value,
-	    		address:document.getElementById("address"),
+			firebase.database().ref('/users/products').push({
+	    		productName: document.getElementById("productName").value,
+	   			productPrice : document.getElementById("productPrice").value,
+	    		productPoints:document.getElementById("productPoints").value,
+	    		productExpire:document.getElementById("expire").value,
 	  		});
+	  		var x;
 		}
 
+		var query = firebase.database().ref("users/products").orderByKey();
+		query.once("value")
+  			.then(function(snapshot) {
+    			snapshot.forEach(function(childSnapshot) {
+      	// key will be "ada" the first time and "alan" the second time
+      			var key = childSnapshot.key;
+      			var childData = childSnapshot.val();
+      			var array = $.map(childData, function(value, index) {
+      				if(index == "productExpire"){
+      					dateArray.push(value);
+      				}
+      				else if(index == "productName"){
+      					nameArray.push(value)
+      				}
+      				else if(index == "productPoints"){
+      					pointArray.push(value)
+      				}
+      				else if(index == "productPrice"){
+      					priceArray.push(value);
+      				}
+      				else{
+      					console.log("something messed up");
+      				}
+		   	 	});
+			});
+    		for (var x = 0; x <= pointArray.length-1; x++){
+  				$('#table1').append('<tr><td>' + nameArray[x] + '</td><td>' + priceArray[x] + '</td><td>' + pointArray[x] + '<td>' + dateArray[x] + '</td></tr>');
+  			}
+  		});
+
+
+ 
+
+
+		firebase.database().ref('/users/products').once('value').then(function(snapshot){
+			var same = snapshot.val();
+			console.log(same);
+		})
+
+		firebase.database().ref('/Name').once('value').then(function(snapshot) {
+			var same = snapshot.val();
+			console.log(same.length);
+			document.getElementById("name").innerHTML = same;
+		});
+
+		firebase.database().ref('/Company').once('value').then(function(snapshot) {
+			var same = snapshot.val();
+			console.log(same);
+			document.getElementById("company").innerHTML = same;
+		});
+
+		firebase.database().ref('/address').once('value').then(function(snapshot) {
+			var same = snapshot.val();
+			console.log(same);
+			document.getElementById("address").innerHTML = same;
+		});
 	</script>
 
 
@@ -78,56 +143,53 @@
 		<h1><span class="fa fa-anchor"></span> Profile</h1>
 		<a href="/logout" class="btn btn-default btn-sm">Logout</a>
 	</div>
-
-	<div class="form-group">
-		<label>Name</label>
-		<input type="text" class="form-control" name="name" id="name">
-	</div>
-	<div class="form-group">
-		<label>Company Name </label>
-		<input type="text" class="form-control" name="company" id="company">
-	</div>
-	<div class="form-group">
-		<label>Address</label>
-		<input type="text" class="form-control" name="address" id="address" placeholder = "3355 S Las Vegas Blvd, Las Vegas, NV 89109">
-	</div>
-	<button type="submit" onclick="setMoreData()" class="btn-submit btn btn-warning btn-lg">Submit</button>
-
-	<h3>Add Items</h3>
-	<div class="form-group">
-		<label>Name</label>
-		<input type="text" class="form-control" name="name" id="name">
-	</div>
-	<div class="form-group">
-		<label>Company Name </label>
-		<input type="text" class="form-control" name="company" id="company">
-	</div>
-	<div class="form-group">
-		<label>Address</label>
-		<input type="text" class="form-control" name="address" id="address" placeholder = "3355 S Las Vegas Blvd, Las Vegas, NV 89109">
-	</div>
-	<button type="submit" onclick="setMoreData()" class="btn-submit btn btn-warning btn-lg">Submit</button>
-
+	<center>
+		<label id="name">Name</label>
 		<br>
+		<label id="company">Company Name </label>
+		<br>
+		<label id="address">Address</label>
+	</center>
+
+	<h3>Add Products</h3>
+	<div class="form-group">
+		<label>Name</label>
+		<input type="text" class="form-control" name="name" id="productName">
+	</div>
+	<div class="form-group">
+		<label>Price </label>
+		<input type="number" class="form-control" name="company" id="productPrice">
+	</div>
+	<div class="form-group">
+		<label>Points </label>
+		<input type="number" class="form-control" name="points" id="productPoints">
+	</div>
+	<div class="form-group">
+		<label>Expiration Date</label>
+		<input type="date" class="form-control" name="address" id="expire">
+	</div>
+
+	<button type="submit" onclick="setMoreData()" class="btn-submit btn btn-warning btn-lg">Submit</button>
+	
+	<br>
 
 	<div class="row">
 		<div class="col-sm-12">
 			<h3>Current Items</h3>
-			<table class="table table-bordered">
+			<table id="table1" class="table table-bordered">
 				<thead>
 					<tr>
-						<th>Email</th>
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th>Grade</th>
-						<th>Points</th>
+						<th>Product Name</th>
+						<th>Product Price</th>
+						<th>Points Redeemed</th>
+						<th>Expiration date</th> 
 					</tr>
 				</thead>
 			</table>
 
-			<br>
+			<!-- <br> -->
 
-			<h3>Current Items on Sale</h3>
+			<!-- <h3>Current Items on Sale</h3>
 			<table class="table table-bordered">
 				<thead>
 					<tr>
@@ -151,10 +213,13 @@
 						<th>Points</th>
 					</tr>
 				</thead>
-			</table>
+			</table> -->
 		</form>
 		</div>
 	</div>
+<footer style="height:100px; width:150%; margin-left:-100px; margin-top:50px; background-color:#ABDEDA">
+
+</footer>
 </div>
 </body>
 </html>
