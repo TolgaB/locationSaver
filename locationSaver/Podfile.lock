@@ -1,15 +1,16 @@
 PODS:
   - KLCPopup (1.0)
   - SIOSocket (0.2.0)
+  - TYMProgressBarView (0.3.2)
 
 DEPENDENCIES:
   - KLCPopup (~> 1.0)
   - SIOSocket (~> 0.2.0)
+  - TYMProgressBarView
 
 SPEC CHECKSUMS:
   KLCPopup: 76c5a19227977f1e53d85236f9ef42257c168d98
   SIOSocket: 2facc0bd02ae72d98c223634a46dd8ebdf9be321
+  TYMProgressBarView: 9f4c54bfd1cde0340f25a8c67e6c3548611f1a8e
 
-PODFILE CHECKSUM: b7b4d934e07b20da72bc887aa3e5e5155e90628c
-
-COCOAPODS: 1.0.1
+COCOAPODS: 0.39.0

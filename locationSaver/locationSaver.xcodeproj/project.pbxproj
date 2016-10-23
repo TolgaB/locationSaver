@@ -200,6 +200,7 @@
 				FD1236A71DBBD6DC005648F2 /* Resources */,
 				5B9C041C9E10F0B06174C12B /* [CP] Embed Pods Frameworks */,
 				F755A2ED2658AFE4F65C1B10 /* [CP] Copy Pods Resources */,
+				C04EE32C0B459F86E0A732A7 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -395,6 +396,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-locationSaverTests/Pods-locationSaverTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C04EE32C0B459F86E0A732A7 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-locationSaver/Pods-locationSaver-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F755A2ED2658AFE4F65C1B10 /* [CP] Copy Pods Resources */ = {

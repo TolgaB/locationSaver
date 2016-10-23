@@ -9,6 +9,7 @@
 #import "consumer.h"
 #import <QuartzCore/QuartzCore.h>
 #import "KLCPopup.h"
+#import <TYMProgressBarView.h>
 
 @interface consumer ()
 @property NSArray *names;
@@ -37,6 +38,12 @@
     [super viewDidLoad];
     
     imageView.contentMode = UIViewContentModeScaleAspectFit;
+    TYMProgressBarView *progressBarView = [[TYMProgressBarView alloc] initWithFrame:CGRectMake(50, 50, 300, 50)];
+    progressBarView.barBorderWidth = 1.0;
+    progressBarView.barBorderColor = [UIColor redColor];
+    
+    [self.view addSubview:progressBarView];
+    progressBarView.progress = 0.75f;
     
 //    CAGradientLayer *gradient = [[CAGradientLayer alloc] init];
 //    gradient.frame = productView.bounds;

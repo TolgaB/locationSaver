@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>KLCPopup.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-locationSaver.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SIOSocket.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>TYMProgressBarView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>55F7A9FA18D797218B78952AF04C4493</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8652041BCF987DD6BB98E867BF4C8EF5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9534F726D644ED63E5552C284B86C02F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D442B758AEC3A6677ABE361EE7E54BE4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
