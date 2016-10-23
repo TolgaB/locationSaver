@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AC5EFFA1DBCA36800F84F7F /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC5EFF91DBCA36800F84F7F /* ProfileViewController.m */; };
 		47FDCD9DFEAFF8E53DC67AD9 /* libPods-locationSaverTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A9330E9DDF3D47B8CBBE44B /* libPods-locationSaverTests.a */; };
 		59064A453AA1FEBDA8D52C3E /* libPods-locationSaver.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDBCBB8D0223BD3C8634090E /* libPods-locationSaver.a */; };
 		FD1236AE1DBBD6DC005648F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1236AD1DBBD6DC005648F2 /* main.m */; };
@@ -41,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		0A9330E9DDF3D47B8CBBE44B /* libPods-locationSaverTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-locationSaverTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AC5EFF81DBCA36800F84F7F /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		0AC5EFF91DBCA36800F84F7F /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		A383FB63DA335ACBDCE4D2DF /* Pods-locationSaver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-locationSaver.release.xcconfig"; path = "Pods/Target Support Files/Pods-locationSaver/Pods-locationSaver.release.xcconfig"; sourceTree = "<group>"; };
 		A8241811EDAE55F1FC8F67F4 /* Pods-locationSaver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-locationSaver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-locationSaver/Pods-locationSaver.debug.xcconfig"; sourceTree = "<group>"; };
 		ABB17C01DF59C6AAD238D427 /* Pods-locationSaverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-locationSaverTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-locationSaverTests/Pods-locationSaverTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +154,8 @@
 				FD1236B21DBBD6DC005648F2 /* ViewController.h */,
 				FD1236B31DBBD6DC005648F2 /* ViewController.m */,
 				FD1236B51DBBD6DC005648F2 /* Main.storyboard */,
+				0AC5EFF81DBCA36800F84F7F /* ProfileViewController.h */,
+				0AC5EFF91DBCA36800F84F7F /* ProfileViewController.m */,
 				FD69293F1DBC27780017DF3E /* barcodeTest.h */,
 				FD6929401DBC27780017DF3E /* barcodeTest.m */,
 				FD1236B81DBBD6DC005648F2 /* Assets.xcassets */,
@@ -439,6 +444,7 @@
 				FD69293E1DBC19500017DF3E /* consumer.m in Sources */,
 				FD6929511DBC82000017DF3E /* productViewController.m in Sources */,
 				FD6929411DBC27780017DF3E /* barcodeTest.m in Sources */,
+				0AC5EFFA1DBCA36800F84F7F /* ProfileViewController.m in Sources */,
 				FD1236B11DBBD6DC005648F2 /* AppDelegate.m in Sources */,
 				FD1236AE1DBBD6DC005648F2 /* main.m in Sources */,
 			);
