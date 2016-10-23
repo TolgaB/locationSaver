@@ -7,6 +7,7 @@
 //
 
 #import "productViewController.h"
+#import "KLCPopup.h"
 
 @interface productViewController ()
 
@@ -39,17 +40,12 @@
     self.imageArray = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"orangejuice"],[UIImage imageNamed:@"tabasco"],[UIImage imageNamed:@"hershey"],[UIImage imageNamed:@"lacroix"],[UIImage imageNamed:@"king"], nil];
 
     
-    UINavigationBar *navbar = [[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 50)];
-    [self.view addSubview:navbar];
-    UINavigationItem *item = [[UINavigationItem alloc]
-                              init];
-    navbar.items= @[item];
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
-                                   initWithTitle:@"Back"
-                                   style:UIBarButtonItemStyleBordered
-                                   target:self
-                                   action:@selector(backBtnClicked:)];
-    item.leftBarButtonItem = backButton;
+//    UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
+//                                   initWithTitle:@"Back"
+//                                   style:UIBarButtonItemStyleBordered
+//                                   target:self
+//                                   action:@selector(backBtnClicked:)];
+//    item.leftBarButtonItem = backButton;
     
     
     [self setUpInfo];
@@ -70,6 +66,7 @@
     //Go back to the offers window
     NSLog(@"back button pressed");
     [self performSegueWithIdentifier:@"toOfferFromProduct" sender:@"self"];
+
 }
 
 -(UIImage *)getImageFromUrl:(NSString *)urlGiven {

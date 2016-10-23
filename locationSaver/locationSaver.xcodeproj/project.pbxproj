@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		74259BE41601FF8DD9A19A1C /* libPods-locationSaver.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8969412D9E7D87609720B1 /* libPods-locationSaver.a */; };
+		47FDCD9DFEAFF8E53DC67AD9 /* libPods-locationSaverTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A9330E9DDF3D47B8CBBE44B /* libPods-locationSaverTests.a */; };
+		59064A453AA1FEBDA8D52C3E /* libPods-locationSaver.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDBCBB8D0223BD3C8634090E /* libPods-locationSaver.a */; };
 		FD1236AE1DBBD6DC005648F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1236AD1DBBD6DC005648F2 /* main.m */; };
 		FD1236B11DBBD6DC005648F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1236B01DBBD6DC005648F2 /* AppDelegate.m */; };
 		FD1236B41DBBD6DC005648F2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1236B31DBBD6DC005648F2 /* ViewController.m */; };
@@ -39,9 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		17E76363663A820AC1DEEBEC /* Pods-locationSaver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-locationSaver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-locationSaver/Pods-locationSaver.debug.xcconfig"; sourceTree = "<group>"; };
-		5C8969412D9E7D87609720B1 /* libPods-locationSaver.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-locationSaver.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A915EF14808D9D598CADB6E1 /* Pods-locationSaver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-locationSaver.release.xcconfig"; path = "Pods/Target Support Files/Pods-locationSaver/Pods-locationSaver.release.xcconfig"; sourceTree = "<group>"; };
+		0A9330E9DDF3D47B8CBBE44B /* libPods-locationSaverTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-locationSaverTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A383FB63DA335ACBDCE4D2DF /* Pods-locationSaver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-locationSaver.release.xcconfig"; path = "Pods/Target Support Files/Pods-locationSaver/Pods-locationSaver.release.xcconfig"; sourceTree = "<group>"; };
+		A8241811EDAE55F1FC8F67F4 /* Pods-locationSaver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-locationSaver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-locationSaver/Pods-locationSaver.debug.xcconfig"; sourceTree = "<group>"; };
+		ABB17C01DF59C6AAD238D427 /* Pods-locationSaverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-locationSaverTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-locationSaverTests/Pods-locationSaverTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BDBCBB8D0223BD3C8634090E /* libPods-locationSaver.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-locationSaver.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CABC6F6BEE081EE966C3917F /* Pods-locationSaverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-locationSaverTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-locationSaverTests/Pods-locationSaverTests.release.xcconfig"; sourceTree = "<group>"; };
 		FD1236A91DBBD6DC005648F2 /* locationSaver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = locationSaver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD1236AD1DBBD6DC005648F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FD1236AF1DBBD6DC005648F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -71,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74259BE41601FF8DD9A19A1C /* libPods-locationSaver.a in Frameworks */,
+				59064A453AA1FEBDA8D52C3E /* libPods-locationSaver.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47FDCD9DFEAFF8E53DC67AD9 /* libPods-locationSaverTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,19 +97,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		349DE8374CEA3F077B324DCF /* Pods */ = {
+		08EB0F7BBF196EF381501DC9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				17E76363663A820AC1DEEBEC /* Pods-locationSaver.debug.xcconfig */,
-				A915EF14808D9D598CADB6E1 /* Pods-locationSaver.release.xcconfig */,
+				A8241811EDAE55F1FC8F67F4 /* Pods-locationSaver.debug.xcconfig */,
+				A383FB63DA335ACBDCE4D2DF /* Pods-locationSaver.release.xcconfig */,
+				ABB17C01DF59C6AAD238D427 /* Pods-locationSaverTests.debug.xcconfig */,
+				CABC6F6BEE081EE966C3917F /* Pods-locationSaverTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		BFD960E54915AFAB58F9B7CA /* Frameworks */ = {
+		0DB54F31514DAC9648C82085 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5C8969412D9E7D87609720B1 /* libPods-locationSaver.a */,
+				BDBCBB8D0223BD3C8634090E /* libPods-locationSaver.a */,
+				0A9330E9DDF3D47B8CBBE44B /* libPods-locationSaverTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -116,8 +124,8 @@
 				FD1236C51DBBD6DC005648F2 /* locationSaverTests */,
 				FD1236D01DBBD6DC005648F2 /* locationSaverUITests */,
 				FD1236AA1DBBD6DC005648F2 /* Products */,
-				349DE8374CEA3F077B324DCF /* Pods */,
-				BFD960E54915AFAB58F9B7CA /* Frameworks */,
+				08EB0F7BBF196EF381501DC9 /* Pods */,
+				0DB54F31514DAC9648C82085 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,12 +194,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD1236D61DBBD6DC005648F2 /* Build configuration list for PBXNativeTarget "locationSaver" */;
 			buildPhases = (
-				35703A50471E1BD8C92371F5 /* Check Pods Manifest.lock */,
+				0E22A120BC050A3B53991917 /* [CP] Check Pods Manifest.lock */,
 				FD1236A51DBBD6DC005648F2 /* Sources */,
 				FD1236A61DBBD6DC005648F2 /* Frameworks */,
 				FD1236A71DBBD6DC005648F2 /* Resources */,
-				0DA24B8155DD2FCD90EEF89E /* Embed Pods Frameworks */,
-				AB16EFC82C5AD7DF5CECF327 /* Copy Pods Resources */,
+				5B9C041C9E10F0B06174C12B /* [CP] Embed Pods Frameworks */,
+				F755A2ED2658AFE4F65C1B10 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -206,9 +214,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD1236D91DBBD6DC005648F2 /* Build configuration list for PBXNativeTarget "locationSaverTests" */;
 			buildPhases = (
+				A54861F0B460D8415BC59418 /* [CP] Check Pods Manifest.lock */,
 				FD1236BE1DBBD6DC005648F2 /* Sources */,
 				FD1236BF1DBBD6DC005648F2 /* Frameworks */,
 				FD1236C01DBBD6DC005648F2 /* Resources */,
+				B4E2A279393F6DEEE7FDF73A /* [CP] Embed Pods Frameworks */,
+				BB5986786F559E135D4E7256 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -311,29 +322,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0DA24B8155DD2FCD90EEF89E /* Embed Pods Frameworks */ = {
+		0E22A120BC050A3B53991917 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-locationSaver/Pods-locationSaver-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		35703A50471E1BD8C92371F5 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,14 +337,74 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		AB16EFC82C5AD7DF5CECF327 /* Copy Pods Resources */ = {
+		5B9C041C9E10F0B06174C12B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-locationSaver/Pods-locationSaver-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A54861F0B460D8415BC59418 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B4E2A279393F6DEEE7FDF73A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-locationSaverTests/Pods-locationSaverTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB5986786F559E135D4E7256 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-locationSaverTests/Pods-locationSaverTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F755A2ED2658AFE4F65C1B10 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,7 +563,7 @@
 		};
 		FD1236D71DBBD6DC005648F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17E76363663A820AC1DEEBEC /* Pods-locationSaver.debug.xcconfig */;
+			baseConfigurationReference = A8241811EDAE55F1FC8F67F4 /* Pods-locationSaver.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -522,7 +578,7 @@
 		};
 		FD1236D81DBBD6DC005648F2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A915EF14808D9D598CADB6E1 /* Pods-locationSaver.release.xcconfig */;
+			baseConfigurationReference = A383FB63DA335ACBDCE4D2DF /* Pods-locationSaver.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -537,6 +593,7 @@
 		};
 		FD1236DA1DBBD6DC005648F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABB17C01DF59C6AAD238D427 /* Pods-locationSaverTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = locationSaverTests/Info.plist;
@@ -549,6 +606,7 @@
 		};
 		FD1236DB1DBBD6DC005648F2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CABC6F6BEE081EE966C3917F /* Pods-locationSaverTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = locationSaverTests/Info.plist;

@@ -8,6 +8,7 @@
 
 #import "consumer.h"
 #import <QuartzCore/QuartzCore.h>
+#import "KLCPopup.h"
 
 @interface consumer ()
 @property NSArray *names;
@@ -66,7 +67,7 @@
     backgroundView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.names = [[NSArray alloc] initWithObjects:@"Simply Beverages Calcium & Vitamin D Pulp Free Orange Juice", @"Tabasco ® Brand Original Flavor Hot Sauce", @"Hershey Chocolate Syrup", @"La Croix Lime Sparkling Water",@"King's Hawaiian Sweet Rolls", nil];
     self.costs = [[NSArray alloc] initWithObjects:@"$5.99",@"$1.89", @"$4.59", @"$3.99", @"$4.49", nil];
-    self.discounts = [[NSArray alloc] initWithObjects:@"1.5 times points", @"2 times points", @"1.2 times points", @"1.4 times points", @"3 times points", nil];
+    self.discounts = [[NSArray alloc] initWithObjects:@"20 points", @"5 points", @"16 points", @"10 points", @"15 points", nil];
     self.size = [[NSArray alloc] initWithObjects:@"89 fl oz", @"2 fl oz", @"48 fl oz", @"8 x 12 fl oz", @"2 x 16 oz", nil];
     self.images = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"orangejuice"],[UIImage imageNamed:@"tabasco"],[UIImage imageNamed:@"hershey"],[UIImage imageNamed:@"lacroix"],[UIImage imageNamed:@"king"], nil];
     
@@ -178,7 +179,7 @@
     currentProduct = currentProduct -1;
     }
     productName.text = self.names[currentProduct];
-    productPoints.text = self.size[currentProduct];
+    productPoints.text = self.discounts[currentProduct];
     productPrice.text = self.costs[currentProduct];
     productImageView.image = self.images[currentProduct];
 }
@@ -188,7 +189,7 @@
         currentProduct = currentProduct + 1;
     }
     productName.text = self.names[currentProduct];
-    productPoints.text = self.size[currentProduct];
+    productPoints.text = self.discounts[currentProduct];
     productPrice.text = self.costs[currentProduct];
     productImageView.image = self.images[currentProduct];
 }
@@ -198,12 +199,48 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)backBtnClicked:(id)sender {
+    //Go back to the offers window
+    NSLog(@"back button pressed");
+    [self performSegueWithIdentifier:@"toOfferFromProduct" sender:@"self"];
+    
+}
+
+-(UIImage *)getImageFromUrl:(NSString *)urlGiven {
+    NSURL *url = [NSURL URLWithString:urlGiven];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLResponse* response;
+    NSError* error = nil;
+    NSData* result = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    UIImage *photo = [UIImage imageWithData:result];
+    return photo;
+}
+
 -(void)tapDetected{
     NSLog(@"Open more info on the product");
     NSNumber *conversion = [NSNumber numberWithInt:currentProduct];
     [[NSUserDefaults standardUserDefaults] setObject:conversion forKey:@"productNumber"];
-    [self performSegueWithIdentifier:@"toProduct" sender:@"self"];
     
+    UIView* contentView = [[UIView alloc] init];
+    contentView.layer.cornerRadius = 5;
+    contentView.backgroundColor = [UIColor whiteColor];
+    contentView.frame = CGRectMake(0.0, 0.0, 300.0, 350.0);
     
+    UILabel *testLabel = [[UILabel alloc] initWithFrame:CGRectMake(contentView.frame.size.width - 250, 30, 200, 30.0)];
+    testLabel.text = self.names[currentProduct];
+    
+    UIImageView *barcodeImage = [[UIImageView alloc] initWithFrame:CGRectMake(contentView.frame.size.width - 250, 100, 200, 200)];
+    barcodeImage.image = [self getImageFromUrl:@"http://www.scandit.com/wp-content/themes/bridge-child/wbq_barcode_gen.php?symbology=qr&value=H3JKQG7LBL98&size=100&ec=L"];
+    [contentView addSubview:barcodeImage];
+    
+//    testLabel.backgroundColor = [UIColor blackColor];
+    [contentView addSubview:testLabel];
+    
+    KLCPopup* popup = [KLCPopup popupWithContentView:contentView];
+    [popup show];
+    
+//    [self performSegueWithIdentifier:@"toProduct" sender:@"self"];
 }
+
+
 @end

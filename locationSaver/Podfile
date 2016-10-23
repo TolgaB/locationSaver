@@ -5,6 +5,7 @@
 
 target 'locationSaver' do
 pod 'SIOSocket', '~> 0.2.0'
+pod 'KLCPopup', '~> 1.0'
 end
 
 target 'locationSaverTests' do

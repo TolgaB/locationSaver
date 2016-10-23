@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '9A538040CF75E462852B58B8'
-               BlueprintName = 'SIOSocket'
+               BlueprintIdentifier = 'CD884D9525D25C95769E1BDF3B2278FF'
+               BlueprintName = 'Pods-locationSaverTests'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libSIOSocket.a'>
+               BuildableName = 'libPods-locationSaverTests.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
