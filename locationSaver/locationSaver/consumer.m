@@ -25,8 +25,10 @@
     __weak IBOutlet UILabel *productName;
     __weak IBOutlet UILabel *pointTillLabel;
     __weak IBOutlet UIImageView *imageView;
+    __weak IBOutlet UIBarButtonItem *offers;
 //    __weak IBOutlet UIView *productView;
     int currentProduct;
+    __weak IBOutlet UIBarButtonItem *contact;
     __weak IBOutlet UIView *backgroundView;
 }
 
