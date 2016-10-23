@@ -25,7 +25,9 @@
     __weak IBOutlet UILabel *productName;
     __weak IBOutlet UILabel *pointTillLabel;
     __weak IBOutlet UIImageView *imageView;
+//    __weak IBOutlet UIView *productView;
     int currentProduct;
+    __weak IBOutlet UIView *backgroundView;
 }
 
 - (void)viewDidLoad {
@@ -33,6 +35,13 @@
     
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     
+//    CAGradientLayer *gradient = [[CAGradientLayer alloc] init];
+//    gradient.frame = productView.bounds;
+//    gradient.startPoint = CGPointMake(0.0, 0.0);
+//    gradient.endPoint = CGPointMake(0.0, 0.0);
+    
+//    gradient.colors = colors;
+//    [productView.layer insertSublayer:gradient above:0];
     
     UISwipeGestureRecognizer *rightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipeHandle:)];
     rightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
@@ -50,14 +59,14 @@
     
     currentProduct = 0;
     
-    imageView.layer.cornerRadius = 10;
-    imageView.layer.borderWidth = 1;
-    imageView.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    backgroundView.layer.cornerRadius = 10;
+    backgroundView.layer.borderWidth = 1;
+    backgroundView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.names = [[NSArray alloc] initWithObjects:@"Simply Beverages Calcium & Vitamin D Pulp Free Orange Juice", @"Tabasco ® Brand Original Flavor Hot Sauce", @"Hershey Chocolate Syrup", @"La Croix Lime Sparkling Water",@"King's Hawaiian Sweet Rolls", nil];
     self.costs = [[NSArray alloc] initWithObjects:@"$5.99",@"$1.89", @"$4.59", @"$3.99", @"$4.49", nil];
     self.discounts = [[NSArray alloc] initWithObjects:@"1.5 times points", @"2 times points", @"1.2 times points", @"1.4 times points", @"3 times points", nil];
     self.size = [[NSArray alloc] initWithObjects:@"89 fl oz", @"2 fl oz", @"48 fl oz", @"8 x 12 fl oz", @"2 x 16 oz", nil];
-    self.images = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"orange.png"],[UIImage imageNamed:@"tabasco.png"],[UIImage imageNamed:@"hershey.png"],[UIImage imageNamed:@"lacroix.jpg"],[UIImage imageNamed:@"king.jpg"], nil];
+    self.images = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"orangejuice"],[UIImage imageNamed:@"tabasco"],[UIImage imageNamed:@"hershey"],[UIImage imageNamed:@"lacroix"],[UIImage imageNamed:@"king"], nil];
     [self getProbability];
 }
 

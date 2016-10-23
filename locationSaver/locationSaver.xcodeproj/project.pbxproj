@@ -18,11 +18,6 @@
 		FD1236D21DBBD6DC005648F2 /* locationSaverUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1236D11DBBD6DC005648F2 /* locationSaverUITests.m */; };
 		FD69293E1DBC19500017DF3E /* consumer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD69293D1DBC19500017DF3E /* consumer.m */; };
 		FD6929411DBC27780017DF3E /* barcodeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FD6929401DBC27780017DF3E /* barcodeTest.m */; };
-		FD6929431DBC373A0017DF3E /* orange.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6929421DBC373A0017DF3E /* orange.png */; };
-		FD6929451DBC37430017DF3E /* tabasco.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6929441DBC37430017DF3E /* tabasco.png */; };
-		FD6929471DBC374D0017DF3E /* hershey.png in Resources */ = {isa = PBXBuildFile; fileRef = FD6929461DBC374D0017DF3E /* hershey.png */; };
-		FD6929491DBC37550017DF3E /* lacroix.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD6929481DBC37550017DF3E /* lacroix.jpg */; };
-		FD69294B1DBC375C0017DF3E /* king.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD69294A1DBC375C0017DF3E /* king.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,11 +61,6 @@
 		FD69293D1DBC19500017DF3E /* consumer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = consumer.m; sourceTree = "<group>"; };
 		FD69293F1DBC27780017DF3E /* barcodeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = barcodeTest.h; sourceTree = "<group>"; };
 		FD6929401DBC27780017DF3E /* barcodeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = barcodeTest.m; sourceTree = "<group>"; };
-		FD6929421DBC373A0017DF3E /* orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orange.png; sourceTree = "<group>"; };
-		FD6929441DBC37430017DF3E /* tabasco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabasco.png; sourceTree = "<group>"; };
-		FD6929461DBC374D0017DF3E /* hershey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hershey.png; sourceTree = "<group>"; };
-		FD6929481DBC37550017DF3E /* lacroix.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lacroix.jpg; sourceTree = "<group>"; };
-		FD69294A1DBC375C0017DF3E /* king.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = king.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,11 +131,6 @@
 		FD1236AB1DBBD6DC005648F2 /* locationSaver */ = {
 			isa = PBXGroup;
 			children = (
-				FD69294A1DBC375C0017DF3E /* king.jpg */,
-				FD6929481DBC37550017DF3E /* lacroix.jpg */,
-				FD6929461DBC374D0017DF3E /* hershey.png */,
-				FD6929421DBC373A0017DF3E /* orange.png */,
-				FD6929441DBC37430017DF3E /* tabasco.png */,
 				FD69293C1DBC19500017DF3E /* consumer.h */,
 				FD69293D1DBC19500017DF3E /* consumer.m */,
 				FD1236AF1DBBD6DC005648F2 /* AppDelegate.h */,
@@ -298,11 +283,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD6929471DBC374D0017DF3E /* hershey.png in Resources */,
-				FD6929431DBC373A0017DF3E /* orange.png in Resources */,
-				FD6929451DBC37430017DF3E /* tabasco.png in Resources */,
-				FD6929491DBC37550017DF3E /* lacroix.jpg in Resources */,
-				FD69294B1DBC375C0017DF3E /* king.jpg in Resources */,
 				FD1236BC1DBBD6DC005648F2 /* LaunchScreen.storyboard in Resources */,
 				FD1236B91DBBD6DC005648F2 /* Assets.xcassets in Resources */,
 				FD1236B71DBBD6DC005648F2 /* Main.storyboard in Resources */,
