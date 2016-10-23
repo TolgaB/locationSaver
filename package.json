@@ -1,0 +1,24 @@
+{
+  "name": "locationsaver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TolgaB/locationSaver.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TolgaB/locationSaver/issues"
+  },
+  "homepage": "https://github.com/TolgaB/locationSaver#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "firebase": "^3.5.1"
+  }
+}

@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+<head>
+	<title>Profile</title>
+
+	<link rel="apple-touch-icon" sizes="57x57" href="favicon_imgs/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="favicon_imgs/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="favicon_imgs//apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="favicon_imgs/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="favicon_imgs/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="favicon_imgs/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="favicon_imgs/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="favicon_imgs/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon_imgs/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="favicon_imgs/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon_imgs/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="favicon_imgs/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon_imgs/favicon-16x16.png">
+	<link rel="manifest" href="favicon_imgs/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="favicon_imgs/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<script src="https://www.gstatic.com/firebasejs/3.0.4/firebase.js"></script>
+
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+
+	<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-messaging.js"></script>
+	<script>
+	  	var config = {
+	    	apiKey: "AIzaSyBek_yuEWiSsaHRJqidi4Jj1ScIAVJbryw",
+	    	authDomain: " money2020-c0325.firebaseapp.com",
+	    	databaseURL: "https://money2020-c0325.firebaseio.com/",
+	  	};
+	  	firebase.initializeApp(config);
+
+	  	var userId = firebase.auth().currentUser.uid;
+	  	var uid = "moZhTZKHTOMx4BXnDXvIFlcsW0K3";
+		var database = firebase.database();
+		function setMoreData(){
+			firebase.database().ref('users/' + uid).set({
+	    		name: document.getElementById("name").value,
+	   			companyName : document.getElementById("company").value,
+	    		address:document.getElementById("address"),
+	  		});
+		}
+
+	</script>
+
+
+	<style>
+		body 		{ padding-top:0px; word-wrap:break-word; }
+		.form-control {
+			border: 1px solid black;
+			border-radius: initial !important;
+
+		}
+
+		.btn-submit {
+			border: 1px solid black;
+			color: black;
+			border-radius: initial !important;
+			background-color: transparent;
+		}
+		.btn-submit:hover, .btn-submit:focus {
+			border-color: black;
+			background-color: rgb(221, 221, 221);
+			color: black;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="page-header text-center">
+		<h1><span class="fa fa-anchor"></span> Profile</h1>
+		<a href="/logout" class="btn btn-default btn-sm">Logout</a>
+	</div>
+
+	<div class="form-group">
+		<label>Name</label>
+		<input type="text" class="form-control" name="name" id="name">
+	</div>
+	<div class="form-group">
+		<label>Company Name </label>
+		<input type="text" class="form-control" name="company" id="company">
+	</div>
+	<div class="form-group">
+		<label>Address</label>
+		<input type="text" class="form-control" name="address" id="address" placeholder = "3355 S Las Vegas Blvd, Las Vegas, NV 89109">
+	</div>
+	<button type="submit" onclick="setMoreData()" class="btn-submit btn btn-warning btn-lg">Submit</button>
+
+	<h3>Add Items</h3>
+	<div class="form-group">
+		<label>Name</label>
+		<input type="text" class="form-control" name="name" id="name">
+	</div>
+	<div class="form-group">
+		<label>Company Name </label>
+		<input type="text" class="form-control" name="company" id="company">
+	</div>
+	<div class="form-group">
+		<label>Address</label>
+		<input type="text" class="form-control" name="address" id="address" placeholder = "3355 S Las Vegas Blvd, Las Vegas, NV 89109">
+	</div>
+	<button type="submit" onclick="setMoreData()" class="btn-submit btn btn-warning btn-lg">Submit</button>
+
+		<br>
+
+	<div class="row">
+		<div class="col-sm-12">
+			<h3>Current Items</h3>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Email</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Grade</th>
+						<th>Points</th>
+					</tr>
+				</thead>
+			</table>
+
+			<br>
+
+			<h3>Current Items on Sale</h3>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Email</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Grade</th>
+						<th>Points</th>
+					</tr>
+				</thead>
+			</table>
+			<br>
+			<h3>Items Given to Charity</h3>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Email</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Grade</th>
+						<th>Points</th>
+					</tr>
+				</thead>
+			</table>
+		</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>

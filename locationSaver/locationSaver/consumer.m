@@ -76,11 +76,11 @@
     backgroundView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.names = [[NSArray alloc] initWithObjects:@"Simply Beverages Calcium & Vitamin D Pulp Free Orange Juice", @"Tabasco ® Brand Original Flavor Hot Sauce", @"Hershey Chocolate Syrup", @"La Croix Lime Sparkling Water",@"King's Hawaiian Sweet Rolls", nil];
     self.costs = [[NSArray alloc] initWithObjects:@"$5.99",@"$1.89", @"$4.59", @"$3.99", @"$4.49", nil];
-    self.discounts = [[NSArray alloc] initWithObjects:@"500 points", @"200 points", @"300 points", @"100 points", @"150 points", nil];
+    self.discounts = [[NSArray alloc] initWithObjects:@"20 points", @"10 points", @"20 points", @"15 points", @"15 points", nil];
     self.size = [[NSArray alloc] initWithObjects:@"89 fl oz", @"2 fl oz", @"48 fl oz", @"8 x 12 fl oz", @"2 x 16 oz", nil];
     self.images = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"orangejuice"],[UIImage imageNamed:@"tabasco"],[UIImage imageNamed:@"hershey"],[UIImage imageNamed:@"lacroix"],[UIImage imageNamed:@"king"], nil];
-    self.progress = [[NSArray alloc] initWithObjects:[NSNumber numberWithFloat:0.25], [NSNumber numberWithFloat:0.9], [NSNumber numberWithFloat:0.60], [NSNumber numberWithFloat:0.65], nil];
-    self.progressBarView.progress = 0.35;
+    self.progress = [[NSArray alloc] initWithObjects:[NSNumber numberWithFloat:0.25], [NSNumber numberWithFloat:0.9], [NSNumber numberWithFloat:0.60], [NSNumber numberWithFloat:0.65], [NSNumber numberWithFloat:0.7], nil];
+    self.progressBarView.progress = 0.25;
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
     singleTap.numberOfTapsRequired = 1;
@@ -187,7 +187,7 @@
 - (void)rightSwipeHandle:(UISwipeGestureRecognizer*)gestureRecognizer
     {
     if (currentProduct > 0) {
-    currentProduct = currentProduct -1;
+        currentProduct = currentProduct -1;
     }
     productName.text = self.names[currentProduct];
     productPoints.text = self.discounts[currentProduct];
